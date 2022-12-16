@@ -19,8 +19,6 @@ public class VilleController {
 	@GetMapping("/ville")
 	@ResponseBody
 	public List<Ville> getVille(@RequestParam(required = false, value = "codePostal") String codePostal) {
-		System.out.println("Get une ville");
-
 		if(codePostal != null) {
 			List<Ville> liste = villeRepository.findByCodePostal(codePostal);
 			System.out.println(liste);
@@ -33,8 +31,6 @@ public class VilleController {
 	@GetMapping("/villeByCodeCommune")
 	@ResponseBody
 	public Ville getVilleByINSEE(@RequestParam(required = false, value = "codeCommune") String codeINSEE) {
-		System.out.println("Get une ville");
-
 		if(codeINSEE != null) {
 			Ville ville = villeRepository.findByCodeCommune(codeINSEE);
 			System.out.println(ville);
