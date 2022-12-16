@@ -11,8 +11,6 @@ public class TestController {
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	@ResponseBody
 	public String get() {
-		System.out.println("get");
-		
 		return "Index";
 	}
 }

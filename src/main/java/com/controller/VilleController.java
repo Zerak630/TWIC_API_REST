@@ -21,7 +21,6 @@ public class VilleController {
 	public List<Ville> getVille(@RequestParam(required = false, value = "codePostal") String codePostal) {
 		if(codePostal != null) {
 			List<Ville> liste = villeRepository.findByCodePostal(codePostal);
-			System.out.println(liste);
 			return liste;
 		} else {
 			return villeRepository.findAll();
@@ -33,7 +32,6 @@ public class VilleController {
 	public Ville getVilleByINSEE(@RequestParam(required = false, value = "codeCommune") String codeINSEE) {
 		if(codeINSEE != null) {
 			Ville ville = villeRepository.findByCodeCommune(codeINSEE);
-			System.out.println(ville);
 			return ville;
 		} else {
 			return null;
